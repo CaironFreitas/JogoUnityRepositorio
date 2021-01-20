@@ -97,7 +97,7 @@ public class ScpSetTextos : MonoBehaviour
         }
     }
 
-    //-- 3
+    //-- 3 Preferencias 
     private void metNomeiaOpcoes()
     {
         switch (ciDescricaoTexto)
