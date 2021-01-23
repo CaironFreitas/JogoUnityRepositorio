@@ -4,7 +4,6 @@ public class HexTileGenerator : MonoBehaviour
 {
     public GameObject ObjTileHexagonal;
     public GameObject ObjJogador;
-    public Camera MainCamera;
 
     int MapaLargura = 8;
     int MapaAltura = 8;
