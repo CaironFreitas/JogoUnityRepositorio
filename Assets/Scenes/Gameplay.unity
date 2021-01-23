@@ -706,7 +706,6 @@ MonoBehaviour:
     type: 3}
   ObjJogador: {fileID: 5597654423090653874, guid: fffe28586a60b0947afdaef4ec63903a,
     type: 3}
-  MainCamera: {fileID: 0}
 --- !u!4 &584989784
 Transform:
   m_ObjectHideFlags: 0

@@ -17,17 +17,17 @@ public class HexTileGenerator : MonoBehaviour
     {
         CloneObjPersonagem = Instantiate(ObjJogador);
         StaticPersonagem.ObjJogador = CloneObjPersonagem;
-        GerarMapa();
+        metGerarMapa();
     }
 
-    void GerarMapa()
+    void metGerarMapa()
     {
         for (int x = 0; x <= MapaLargura; x++)
         {
             for (int y = 0; y <= MapaAltura; y++)
             {
                 GameObject CloneObjTileHexagonal = Instantiate(ObjTileHexagonal);
-                SetVariaveisTile(CloneObjTileHexagonal);
+                metSetVariaveisTile(CloneObjTileHexagonal);
 
                 if (x % 2 == 0)
                 {
@@ -38,13 +38,13 @@ public class HexTileGenerator : MonoBehaviour
                     CloneObjTileHexagonal.transform.position = new Vector3(x * TileAfastamentoX, y * TileAfastamentoY + 0.9f);
                 }
 
-                SetTileInformacao(CloneObjTileHexagonal, x, y);
-                InicializaConformeTiles(x, y, CloneObjTileHexagonal);
+                metSetTileInformacao(CloneObjTileHexagonal, x, y);
+                metInicializaConformeTiles(x, y, CloneObjTileHexagonal);
             }
         }
     }
 
-    void SetTileInformacao(GameObject OjbTile, int x, int y)
+    void metSetTileInformacao(GameObject OjbTile, int x, int y)
     {
         OjbTile.transform.parent = transform;
         OjbTile.name = x.ToString() + "," + y.ToString();
@@ -52,21 +52,21 @@ public class HexTileGenerator : MonoBehaviour
         OjbTile.GetComponent<PropriedadesTile>().PosY = y;
     }
 
-    void InicializaConformeTiles(int x, int y, GameObject ObjTile)
+    void metInicializaConformeTiles(int x, int y, GameObject ObjTile)
     {
         if (x == 1 & y == 1)
         {
-            SpawnPersonagem(ObjTile);
+            metSpawnPersonagem(ObjTile);
             StaticPersonagem.ObjTileAtual = ObjTile;
         }
     }
 
-    void SpawnPersonagem(GameObject objTile)
+    void metSpawnPersonagem(GameObject objTile)
     {
         StaticPersonagem.ObjJogador.transform.position = objTile.transform.position;
     }
 
-    void SetVariaveisTile(GameObject objTile)
+    void metSetVariaveisTile(GameObject objTile)
     {
         objTile.GetComponent<ClickTile>().ObjJogador = StaticPersonagem.ObjJogador;
     }
