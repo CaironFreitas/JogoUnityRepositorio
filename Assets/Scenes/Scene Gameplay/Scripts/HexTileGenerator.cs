@@ -5,9 +5,6 @@ public class HexTileGenerator : MonoBehaviour
     public GameObject ObjTileHexagonal;
     public GameObject ObjJogador;
 
-    int MapaLargura = 8;
-    int MapaAltura = 8;
-
     float TileAfastamentoX = 2.741f;
     float TileAfastamentoY = 1.82f;
 
@@ -22,9 +19,9 @@ public class HexTileGenerator : MonoBehaviour
 
     void metGerarMapa()
     {
-        for (int x = 0; x <= MapaLargura; x++)
+        for (int x = 0; x <= staticScpMapProperties.psiMapHeight; x++)
         {
-            for (int y = 0; y <= MapaAltura; y++)
+            for (int y = 0; y <= staticScpMapProperties.psiMapWeight; y++)
             {
                 GameObject CloneObjTileHexagonal = Instantiate(ObjTileHexagonal);
                 metSetVariaveisTile(CloneObjTileHexagonal);
@@ -42,6 +39,8 @@ public class HexTileGenerator : MonoBehaviour
                 metInicializaConformeTiles(x, y, CloneObjTileHexagonal);
             }
         }
+
+        staticScpMapProperties.psbMapaCriado = true;
     }
 
     void metSetTileInformacao(GameObject OjbTile, int x, int y)

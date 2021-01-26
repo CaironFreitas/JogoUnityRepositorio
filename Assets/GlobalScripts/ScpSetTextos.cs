@@ -45,7 +45,7 @@ public class ScpSetTextos : MonoBehaviour
         if (cbLinguaIngles) { ctxTexto.text = partxTextoIngles; }
     }
 
-    //-- 1
+    //-- 1 botoes menu
     private void metNomeiaBotoes()
     {
         switch (ciDescricaoTexto)
