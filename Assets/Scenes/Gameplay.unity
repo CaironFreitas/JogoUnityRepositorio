@@ -683,8 +683,9 @@ GameObject:
   m_Component:
   - component: {fileID: 584989784}
   - component: {fileID: 584989783}
+  - component: {fileID: 584989785}
   m_Layer: 0
-  m_Name: GeradorMapa
+  m_Name: Mapa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,6 +721,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &584989785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584989782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76012d0dec201ad45a265b73c87f6fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &720406398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1179,7 @@ GameObject:
   - component: {fileID: 1767781318}
   - component: {fileID: 1767781317}
   - component: {fileID: 1767781316}
+  - component: {fileID: 1767781319}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1221,6 +1235,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767781319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767781315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff795b726ebac3a4cad68faf73dad449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pobjDefaultEnemy: {fileID: 4590504548770373292, guid: 9c9b8b94689d934418b406195f63899d,
+    type: 3}
 --- !u!1 &1944940118
 GameObject:
   m_ObjectHideFlags: 0
