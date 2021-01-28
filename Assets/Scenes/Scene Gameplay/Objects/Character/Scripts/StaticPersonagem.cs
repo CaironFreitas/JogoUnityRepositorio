@@ -7,8 +7,9 @@ public class StaticPersonagem : MonoBehaviour
     public static GameObject ObjJogador;
     public static GameObject ObjTileAtual;
 
-    public static long llPontosHabilidade;
-    public static long llPontosCorpoCorpo;
-    public static long llPontosDistancia;
-    public static long llPontosResistencia;
+    public static long plSkillPoints;
+    public static long plMelee;
+    public static long plRange;
+    public static long plAthletics;
+    public static long plSneak;
 }

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ScpSetTextos : MonoBehaviour
 {
-    public int ciTipoTexto;
-    public int ciDescricaoTexto;
+    public int piLanguageGroup;
+    public int piLanguageCode;
 
     private bool cbLinguaPortugues;
     private bool cbLinguaIngles;
@@ -25,7 +25,7 @@ public class ScpSetTextos : MonoBehaviour
         cbLinguaPortugues = (PlayerPrefs.GetString("Idioma") == "Portugues");
         cbLinguaIngles = (PlayerPrefs.GetString("Idioma") == "English");
 
-        switch (ciTipoTexto)
+        switch (piLanguageGroup)
         {
             case 1:
                 metNomeiaBotoes();
@@ -36,6 +36,15 @@ public class ScpSetTextos : MonoBehaviour
             case 3:
                 metNomeiaOpcoes();
                 break;
+            case 4:
+                metSetCombatButtonName();
+                break;
+            case 5:
+                metSetEventTitleOptions();
+                break;
+            case 6:
+                metSetEventWindowText();
+                break;
         }
     }
 
@@ -45,10 +54,10 @@ public class ScpSetTextos : MonoBehaviour
         if (cbLinguaIngles) { ctxTexto.text = partxTextoIngles; }
     }
 
-    //-- 1 botoes menu
     private void metNomeiaBotoes()
     {
-        switch (ciDescricaoTexto)
+        //-- Group 1
+        switch (piLanguageCode)
         {
             case 1:
                 metSetTexto("Continuar", "Continue");
@@ -65,10 +74,10 @@ public class ScpSetTextos : MonoBehaviour
         }
     }
 
-    //-- 2
     private void metNomeiaJanelaNovoJogo() 
     {
-        switch (ciDescricaoTexto)
+        //-- Group 2
+        switch (piLanguageCode)
         {
             case 1:
                 metSetTexto("Nome", "Name");
@@ -89,18 +98,21 @@ public class ScpSetTextos : MonoBehaviour
                 metSetTexto("Combate a distância", "Range combat");
                 break;
             case 7:
-                metSetTexto("Resistência", "Endurance");
+                metSetTexto("Atletismo", "Athletics");
                 break;
             case 8:
                 metSetTexto("INFORMAÇÕES PESSOAIS", "PERSONAL DATA");
                 break;
+            case 9:
+                metSetTexto("Furtividade", "Sneak");
+                break;
         }
     }
 
-    //-- 3 Preferencias 
     private void metNomeiaOpcoes()
     {
-        switch (ciDescricaoTexto)
+        //-- Group 3
+        switch (piLanguageCode)
         {
             case 1:
                 metSetTexto("Idioma", "Language");
@@ -110,6 +122,61 @@ public class ScpSetTextos : MonoBehaviour
                 break;
             case 3:
                 metSetTexto("Salvar", "Save");
+                break;
+        }
+    }
+
+    private void metSetCombatButtonName()
+    {
+        //-- Group 4
+        switch (piLanguageCode)
+        {
+            case 1:
+                metSetTexto("Ataque desarmado", "Unarmed atack");
+                break;
+            case 2:
+                metSetTexto("Fugir", "Flee");
+                break;
+            case 3:
+                metSetTexto("Esconder", "Hide");
+                break;
+
+        }
+    }
+
+    private void metSetEventTitleOptions()
+    {
+        //-- Group 5
+        switch (piLanguageCode)
+        {
+            case 1:
+                metSetTexto("<b>Combate</b>", "<b>Combat</b>");
+                break;
+            case 2:
+                metSetTexto("<b>Dialogo</b>", "<b>Dialogue</b>");
+                break;
+        }
+    }
+
+    private void metSetEventWindowText()
+    {
+        //-- Group 6
+        switch (piLanguageCode)
+        {
+            case 1:
+                metSetTexto("Você", "You");
+                break;
+            case 2:
+                metSetTexto("Local", "Place");
+                break;
+            case 3:
+                metSetTexto("Condições", "Conditions");
+                break;
+            case 4:
+                metSetTexto("Possíveis ações", "Possible actions");
+                break;
+            case 5:
+                metSetTexto("Registros", "Log");
                 break;
         }
     }

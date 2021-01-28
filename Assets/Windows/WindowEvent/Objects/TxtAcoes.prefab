@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8554183203301895208}
   - component: {fileID: 3736341292781506536}
   - component: {fileID: 7253594943462122111}
+  - component: {fileID: 3849167574993774336}
   m_Layer: 5
   m_Name: TxtAcoes
   m_TagString: Untagged
@@ -78,3 +79,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: TextoPadrao
+--- !u!114 &3849167574993774336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8478720207064033595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4543bc4ed5270fa4cb40ee0d62779a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ciTipoTexto: 0
+  ciDescricaoTexto: 0

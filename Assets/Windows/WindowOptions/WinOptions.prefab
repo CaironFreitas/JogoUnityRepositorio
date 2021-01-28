@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4001134816472507607}
   - component: {fileID: 7733275472560059587}
   m_Layer: 5
-  m_Name: JanOpcoesMenu
+  m_Name: WinOptions
   m_TagString: JanelaOpcoesMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1740,6 +1740,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2611057088346650426, guid: 0ca849ea4c30a184e8327fb5476b4e0c,
         type: 3}
+      propertyPath: piLanguageCode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611057088346650426, guid: 0ca849ea4c30a184e8327fb5476b4e0c,
+        type: 3}
+      propertyPath: piLanguageGroup
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611057088346650426, guid: 0ca849ea4c30a184e8327fb5476b4e0c,
+        type: 3}
       propertyPath: ciDescricaoTexto
       value: 2
       objectReference: {fileID: 0}
@@ -2015,6 +2025,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
+      propertyPath: piLanguageCode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageGroup
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
       propertyPath: ciDescricaoTexto
       value: 1
       objectReference: {fileID: 0}
@@ -2041,6 +2061,16 @@ PrefabInstance:
     - target: {fileID: 5279760483774407243, guid: 9d879fa69bb62624b97e5de886696115,
         type: 3}
       propertyPath: ciTipoTexto
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279760483774407243, guid: 9d879fa69bb62624b97e5de886696115,
+        type: 3}
+      propertyPath: piLanguageCode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279760483774407243, guid: 9d879fa69bb62624b97e5de886696115,
+        type: 3}
+      propertyPath: piLanguageGroup
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5279760483774407243, guid: 9d879fa69bb62624b97e5de886696115,

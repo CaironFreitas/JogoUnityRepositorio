@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 230608720695627753}
   - component: {fileID: 1747283206287215193}
   - component: {fileID: 269206517319080921}
+  - component: {fileID: 5097172870416432567}
   m_Layer: 0
   m_Name: ObjInimigo
   m_TagString: EnemyDefault
@@ -96,3 +97,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pobjEventWindow: {fileID: 2635347505990421636, guid: b9edb513b088b2c40bcb66b50ecac5dc,
     type: 3}
+--- !u!114 &5097172870416432567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4590504548770373292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85640c09586293a4aafac3e52fdfe6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plMeleeCombat: 0

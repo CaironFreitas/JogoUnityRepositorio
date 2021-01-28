@@ -5,12 +5,15 @@ using UnityEngine;
 public class scpCreateEventWindow : MonoBehaviour
 {
     public GameObject pobjEventWindow;
-    
+
+    public scpEnemyInfo pscpEnemyInfo;
+
     private GameObject cobjMainCanvas;
 
     private void Start()
     {
         cobjMainCanvas = GameObject.Find("Canvas");
+        pscpEnemyInfo = this.GetComponent<scpEnemyInfo>();
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -20,6 +23,10 @@ public class scpCreateEventWindow : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("WindowEvent").GetUpperBound(0) < 0)
             {
                 GameObject CloneCgoJanela = Instantiate(pobjEventWindow, cobjMainCanvas.transform);
+
+                ScpCriaBotoesAcao lscpCriaBotoesAcao = CloneCgoJanela.GetComponent<ScpCriaBotoesAcao>();
+
+                lscpCriaBotoesAcao.metStartEvent(pscpEnemyInfo.piCombatOptions, pscpEnemyInfo.piDialogueOptions);
             }
         }
     }

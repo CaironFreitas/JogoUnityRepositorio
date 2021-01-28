@@ -4,18 +4,20 @@ using UnityEngine;
 
 static class StaticPontos
 {
-    public static long llPontosHabilidadeInicial = 14;
-    public static long llPontosHabilidade;
-    public static long llPontosCorpoCorpo;
-    public static long llPontosDistancia;
-    public static long llPontosResistencia;
+    public static long plStartSkillPoints = 14;
+    public static long plSkillPoints;
+    public static long plMelee;
+    public static long plRange;
+    public static long plAthletics;
+    public static long plSneak;
 
     public static void metSetPontosIniciais()
     {
-        llPontosHabilidade = llPontosHabilidadeInicial;
-        llPontosCorpoCorpo = 1;
-        llPontosDistancia = 1;
-        llPontosResistencia = 1;
+        plSkillPoints = plStartSkillPoints;
+        plMelee       = 1;
+        plRange       = 1;
+        plAthletics   = 1;
+        plSneak       = 1;
     }
 
 }

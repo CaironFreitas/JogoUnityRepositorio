@@ -6,24 +6,27 @@ public class scpSomaDiminuiPontos : MonoBehaviour
 {
     public void Soma()
     {
-        if (StaticPontos.llPontosHabilidade > 0)
+        if (StaticPontos.plSkillPoints > 0)
         {
             switch (this.transform.parent.gameObject.name)
             {
                 case "TxtCombateCorpo":
-                    StaticPontos.llPontosCorpoCorpo++;
+                    StaticPontos.plMelee++;
                     break;
 
                 case "TxtCombateDistancia":
-                    StaticPontos.llPontosDistancia++;
+                    StaticPontos.plRange++;
                     break;
 
                 case "TxtResistencia":
-                    StaticPontos.llPontosResistencia++;
+                    StaticPontos.plAthletics++;
+                    break;
+                case "TxtSneak":
+                    StaticPontos.plSneak++;
                     break;
             }
 
-            StaticPontos.llPontosHabilidade--;
+            StaticPontos.plSkillPoints--;
         }
     }
 
@@ -32,26 +35,33 @@ public class scpSomaDiminuiPontos : MonoBehaviour
         switch (this.transform.parent.gameObject.name)
         {
             case "TxtCombateCorpo":
-                if (StaticPontos.llPontosCorpoCorpo > 1)
+                if (StaticPontos.plMelee > 1)
                 {
-                    StaticPontos.llPontosCorpoCorpo--;
-                    StaticPontos.llPontosHabilidade++;
+                    StaticPontos.plMelee--;
+                    StaticPontos.plSkillPoints++;
                 }
                 break;
 
             case "TxtCombateDistancia":
-                if (StaticPontos.llPontosDistancia > 1)
+                if (StaticPontos.plRange > 1)
                 {
-                    StaticPontos.llPontosDistancia--;
-                    StaticPontos.llPontosHabilidade++;
+                    StaticPontos.plRange--;
+                    StaticPontos.plSkillPoints++;
                 }
                 break;
 
             case "TxtResistencia":
-                if (StaticPontos.llPontosResistencia > 1)
+                if (StaticPontos.plAthletics > 1)
                 {
-                    StaticPontos.llPontosResistencia--;
-                    StaticPontos.llPontosHabilidade++;
+                    StaticPontos.plAthletics--;
+                    StaticPontos.plSkillPoints++;
+                }
+                break;
+            case "TxtSneak":
+                if (StaticPontos.plSneak > 1)
+                {
+                    StaticPontos.plSneak--;
+                    StaticPontos.plSkillPoints++;
                 }
                 break;
         }

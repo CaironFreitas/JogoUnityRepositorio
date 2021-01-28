@@ -7,10 +7,10 @@ public class ComecaJogo : MonoBehaviour
 {
     public void IniciaJogo()
     {
-        StaticPersonagem.llPontosHabilidade = StaticPontos.llPontosHabilidade;
-        StaticPersonagem.llPontosCorpoCorpo = StaticPontos.llPontosCorpoCorpo;
-        StaticPersonagem.llPontosDistancia = StaticPontos.llPontosDistancia;
-        StaticPersonagem.llPontosResistencia = StaticPontos.llPontosResistencia;
+        StaticPersonagem.plMelee = StaticPontos.plMelee;
+        StaticPersonagem.plRange = StaticPontos.plRange;
+        StaticPersonagem.plAthletics = StaticPontos.plAthletics;
+        StaticPersonagem.plSneak = StaticPontos.plSneak;
 
         SceneManager.LoadScene("Gameplay");
     }

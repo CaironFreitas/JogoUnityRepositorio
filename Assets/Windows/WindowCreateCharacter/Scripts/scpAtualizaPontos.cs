@@ -8,7 +8,8 @@ public class scpAtualizaPontos : MonoBehaviour
     public Text TextPontosHabilidade;
     public Text TextPontosCorpoCorpo;
     public Text TextPontosDistancia;
-    public Text TextPontosResistencia;
+    public Text TextPontosAtletismo;
+    public Text TextSneakPoints;
 
     void Start()
     {
@@ -17,9 +18,10 @@ public class scpAtualizaPontos : MonoBehaviour
 
     void FixedUpdate()
     {
-        TextPontosHabilidade.text = StaticPontos.llPontosHabilidade.ToString();
-        TextPontosCorpoCorpo.text = StaticPontos.llPontosCorpoCorpo.ToString();
-        TextPontosDistancia.text = StaticPontos.llPontosDistancia.ToString();
-        TextPontosResistencia.text = StaticPontos.llPontosResistencia.ToString();
+        TextPontosHabilidade.text = StaticPontos.plSkillPoints.ToString();
+        TextPontosCorpoCorpo.text = StaticPontos.plMelee.ToString();
+        TextPontosDistancia.text = StaticPontos.plRange.ToString();
+        TextPontosAtletismo.text = StaticPontos.plAthletics.ToString();
+        TextSneakPoints.text = StaticPontos.plSneak.ToString();
     }
 }

@@ -255,6 +255,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
+      propertyPath: piLanguageCode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageGroup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
       propertyPath: ciDescricaoTexto
       value: 1
       objectReference: {fileID: 0}
@@ -477,6 +487,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
+      propertyPath: piLanguageCode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageGroup
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
       propertyPath: ciDescricaoTexto
       value: 2
       objectReference: {fileID: 0}
@@ -678,6 +698,16 @@ PrefabInstance:
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: ciTipoTexto
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageCode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageGroup
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
@@ -1400,6 +1430,16 @@ PrefabInstance:
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: ciTipoTexto
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageCode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
+      propertyPath: piLanguageGroup
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7461036033568123485, guid: 90dd857d32dfbb245850ed065c16f04b,
