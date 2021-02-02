@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class scpEnemyInfo : MonoBehaviour
 {
+    [Header("Main Properties")]
+    public string psName;
     public long plMelee;
     public long plRange;
     public long plAthletics;
     public long plSneak;
-    public string psName;
+
+    [Header("Possible event options")]
     public int[] piCombatOptions;
     public int[] piDialogueOptions;
 

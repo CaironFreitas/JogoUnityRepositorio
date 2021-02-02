@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scpPlayerActions : MonoBehaviour
 {
+    [Header("General Scripts (Automatic set)")]
     public scpEnemyInfo pscpEnemyInfo;
     public ScpEscreveAcoes pscpEscreveAcoes;
 
