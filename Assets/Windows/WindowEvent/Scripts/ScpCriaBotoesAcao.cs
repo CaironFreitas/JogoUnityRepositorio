@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ScpCriaBotoesAcao : MonoBehaviour
 {
+    const int TYPE_COMBAT = 1;
+    const int TYPE_DIALOGUE = 2;
 
     public GameObject pobjBtnOpcoes;
     public GameObject pobjContent;
@@ -13,17 +15,20 @@ public class ScpCriaBotoesAcao : MonoBehaviour
     public Sprite[] pspIconesDialogo;
 
     private GameObject cobjImgIcone;
+    private scpEnemyInfo pscpEnemyInfo;
 
-    public void metStartEvent(int[] pariCombatOptions, int[] pariDialogueOptions)
+    public void metStartEvent(scpEnemyInfo parScpEnemyInfo)
     {
-        if (pariCombatOptions.GetUpperBound(0) > 0)
+        pscpEnemyInfo = parScpEnemyInfo;
+
+        if (parScpEnemyInfo.piCombatOptions.GetUpperBound(0) > 0)
         {
-            MetGeradorBotoesCombate(pariCombatOptions);
+            MetGeradorBotoesCombate(parScpEnemyInfo.piCombatOptions);
         }
 
-        if (pariDialogueOptions.GetUpperBound(0) > 0)
+        if (parScpEnemyInfo.piDialogueOptions.GetUpperBound(0) > 0)
         {
-            MetGeradorBotoesDialogo(pariDialogueOptions);
+            MetGeradorBotoesDialogo(parScpEnemyInfo.piDialogueOptions);
         }
     }
 
@@ -45,14 +50,14 @@ public class ScpCriaBotoesAcao : MonoBehaviour
         {
             switch (llCodBotao)
             {
-                case 0:
-                    MetCriaBotao(llCodBotao, pspIconesCombate, 4, 1);
+                case 0: //-- Melee Combat
+                    MetCriaBotao(llCodBotao, pspIconesCombate, 4, 1, TYPE_COMBAT);
                     break;
-                case 1:
-                    MetCriaBotao(llCodBotao, pspIconesCombate, 4, 2);
+                case 1: //-- Flee
+                    MetCriaBotao(llCodBotao, pspIconesCombate, 4, 2, TYPE_COMBAT);
                     break;
-                case 2:
-                    MetCriaBotao(llCodBotao, pspIconesCombate, 4, 3);
+                case 2: //-- Hide
+                    MetCriaBotao(llCodBotao, pspIconesCombate, 4, 3, TYPE_COMBAT);
                     break;
             }
         }
@@ -86,21 +91,30 @@ public class ScpCriaBotoesAcao : MonoBehaviour
         }
     }
 
-    void MetCriaBotao(int pariCodigoBotao, Sprite[] parimgIcones, int pariLanguageGroup, int pariLanguageCode)
+    void MetCriaBotao(int pariCodigoBotao, Sprite[] parimgIcones, int pariLanguageGroup, int pariLanguageCode, int pariActionType)
     {
         GameObject CloneCobjBtnOpcoes = Instantiate(pobjBtnOpcoes);
 
-        ScpSetTextos lscpSetTextos = CloneCobjBtnOpcoes.GetComponentInChildren<ScpSetTextos>();
-        Image lImgSprite           = CloneCobjBtnOpcoes.transform.Find("IconeBtn").gameObject.GetComponent<Image>();
+        Image lImgSprite                           = CloneCobjBtnOpcoes.transform.Find("IconeBtn").gameObject.GetComponent<Image>();
+        ScpSetTextos lscpSetTextos                 = CloneCobjBtnOpcoes.GetComponentInChildren<ScpSetTextos>();
+        scpClickActionButton lscpClickActionButton = CloneCobjBtnOpcoes.GetComponent<scpClickActionButton>();
 
+        //-- Set button text
         lscpSetTextos.piLanguageCode = pariLanguageCode;
         lscpSetTextos.piLanguageGroup = pariLanguageGroup;
 
+        //-- Set Button Icon
         lImgSprite.sprite = parimgIcones[pariCodigoBotao];
 
+        //-- Set Button Position
         CloneCobjBtnOpcoes.transform.GetComponent<RectTransform>().SetParent(pobjContent.gameObject.GetComponent<RectTransform>().transform);
-
         CloneCobjBtnOpcoes.GetComponent<RectTransform>().transform.localPosition = new Vector3(0.0f, 0.0f, 356.6f);
         CloneCobjBtnOpcoes.GetComponent<RectTransform>().transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+        //-- Set Button info
+        lscpClickActionButton.plActionType  = pariActionType;
+        lscpClickActionButton.plActionCode  = pariCodigoBotao;
+        lscpClickActionButton.pscpEnemyInfo = pscpEnemyInfo;
+
     }
 }

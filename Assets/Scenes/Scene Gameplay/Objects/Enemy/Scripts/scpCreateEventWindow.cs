@@ -15,18 +15,17 @@ public class scpCreateEventWindow : MonoBehaviour
         cobjMainCanvas = GameObject.Find("Canvas");
         pscpEnemyInfo = this.GetComponent<scpEnemyInfo>();
     }
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         if (StaticPersonagem.ObjJogador.transform.position == this.transform.position)
         {
             if (GameObject.FindGameObjectsWithTag("WindowEvent").GetUpperBound(0) < 0)
             {
-                GameObject CloneCgoJanela = Instantiate(pobjEventWindow, cobjMainCanvas.transform);
-
+                GameObject CloneCgoJanela            = Instantiate(pobjEventWindow, cobjMainCanvas.transform);
                 ScpCriaBotoesAcao lscpCriaBotoesAcao = CloneCgoJanela.GetComponent<ScpCriaBotoesAcao>();
 
-                lscpCriaBotoesAcao.metStartEvent(pscpEnemyInfo.piCombatOptions, pscpEnemyInfo.piDialogueOptions);
+                lscpCriaBotoesAcao.metStartEvent(pscpEnemyInfo);
             }
         }
     }

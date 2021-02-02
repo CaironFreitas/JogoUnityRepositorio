@@ -597,7 +597,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Come\xE7ar"
+  m_Text: Come
 --- !u!114 &5998971968271272956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,8 +610,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4543bc4ed5270fa4cb40ee0d62779a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  piLanguageGroup: 0
-  piLanguageCode: 0
+  piLanguageGroup: 2
+  piLanguageCode: 4
 --- !u!1 &1848427252503618681
 GameObject:
   m_ObjectHideFlags: 0

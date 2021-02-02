@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5921517299418912684}
   - component: {fileID: 1272369829157427162}
   - component: {fileID: 2182596228268696916}
+  - component: {fileID: 8716800895674678803}
   - component: {fileID: 1668506112241661683}
   m_Layer: 5
   m_Name: BtnAcoes
@@ -77,6 +78,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8716800895674678803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060976602281510573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b721905c15b2f147a4b991608a80455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plActionCode: 0
+  plActionType: 0
 --- !u!114 &1668506112241661683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +134,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2182596228268696916}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8716800895674678803}
+        m_MethodName: metClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1328374846742199491
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,5 +311,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4543bc4ed5270fa4cb40ee0d62779a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ciTipoTexto: 0
-  ciDescricaoTexto: 0
+  piLanguageGroup: 0
+  piLanguageCode: 0

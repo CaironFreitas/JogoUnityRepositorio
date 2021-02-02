@@ -5,22 +5,30 @@ using UnityEngine.UI;
 
 public class ScpEscreveAcoes : MonoBehaviour
 {
-    [Multiline]
-    public static string strTextBox;
-    private Text TxtHistorico;
+    public GameObject pobjText;
+    public GameObject pobjContent;
 
-    // Start is called before the first frame update
-    void Start()
+    private ScrollRect pscrollHistoric;
+
+    private void Start()
     {
-        TxtHistorico = this.gameObject.GetComponent<Text>();
-    }
-    private void FixedUpdate()
-    {
-        TxtHistorico.text = strTextBox;
+        pscrollHistoric = GameObject.Find("ScrollHistorico").GetComponent<ScrollRect>();
     }
 
-    public static void MetAdicionaLinhaDialogo(string ParNomeInimigo, string ParTexto)
+    public void metDefaultText(string ParNomeInimigo, string ParTexto)
     {
-        strTextBox += ParNomeInimigo + ": " + ParTexto + "\n";
+        GameObject CloneOjbText = Instantiate(pobjText, pobjContent.transform);
+
+        CloneOjbText.GetComponent<Text>().text = ParNomeInimigo + ": " + ParTexto;
+
+        ScrollToBottom(pscrollHistoric);
+    }
+
+    public void ScrollToBottom(ScrollRect scrollRect)
+    {
+        Canvas.ForceUpdateCanvases();
+        scrollRect.verticalScrollbar.value = 0f;
+        Canvas.ForceUpdateCanvases();
+        scrollRect.velocity = new Vector2(0f, 1000f);
     }
 }
