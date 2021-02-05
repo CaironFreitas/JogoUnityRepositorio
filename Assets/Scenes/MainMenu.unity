@@ -336,7 +336,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &286133082
@@ -730,6 +730,7 @@ GameObject:
   - component: {fileID: 721073288}
   - component: {fileID: 721073287}
   - component: {fileID: 721073290}
+  - component: {fileID: 721073291}
   m_Layer: 5
   m_Name: BtnOpcoes
   m_TagString: Untagged
@@ -863,6 +864,19 @@ MonoBehaviour:
   cgoJanela: {fileID: 1025442033807647052, guid: a8fd48031a1dace4aa960aacd801bf36,
     type: 3}
   ccsMainCanvas: {fileID: 2147200539}
+--- !u!114 &721073291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721073285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a9619f5954eea4d861ba19be547d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  psTag: WindowOptions
 --- !u!224 &835029872 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5127436820606347796, guid: 90dd857d32dfbb245850ed065c16f04b,
@@ -1036,6 +1050,7 @@ GameObject:
   - component: {fileID: 1215103325}
   - component: {fileID: 1215103324}
   - component: {fileID: 1215103328}
+  - component: {fileID: 1215103327}
   m_Layer: 5
   m_Name: BtnNovoJogo
   m_TagString: Untagged
@@ -1154,6 +1169,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1215103322}
   m_CullTransparentMesh: 0
+--- !u!114 &1215103327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215103322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a9619f5954eea4d861ba19be547d82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  psTag: WindowCreateCharacter
 --- !u!114 &1215103328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,7 +1632,6 @@ GameObject:
   - component: {fileID: 2147200539}
   - component: {fileID: 2147200538}
   - component: {fileID: 2147200537}
-  - component: {fileID: 2147200541}
   - component: {fileID: 2147200542}
   m_Layer: 5
   m_Name: Canvas
@@ -1698,20 +1725,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2147200541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147200536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff0111779d0882c4b8b6bc05eb7b66b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cgoBotaoNovoJogo: {fileID: 1215103322}
-  cgoBotaoOpcoes: {fileID: 721073285}
 --- !u!114 &2147200542
 MonoBehaviour:
   m_ObjectHideFlags: 0

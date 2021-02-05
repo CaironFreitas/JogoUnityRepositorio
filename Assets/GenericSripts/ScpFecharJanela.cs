@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ScpFecharJanela : MonoBehaviour
 {
-    public GameObject cgoJanela;
+    public GameObject cobjJanela;
     public void metFecharJanela()
     {
-        Destroy(cgoJanela);
+        Destroy(cobjJanela);
     }
 }

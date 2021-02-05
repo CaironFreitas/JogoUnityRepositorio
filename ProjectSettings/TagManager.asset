@@ -4,10 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - JanelaCriaPersonagem
-  - JanelaOpcoesMenu
   - EnemyDefault
   - WindowEvent
+  - WindowCreateCharacter
+  - WindowHealth
+  - WindowOptions
+  - JanelaOpcoesMenu
+  - JanelaCriaPersonagem
   layers:
   - Default
   - TransparentFX

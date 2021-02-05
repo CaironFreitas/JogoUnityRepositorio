@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7733275472560059587}
   m_Layer: 5
   m_Name: WinOptions
-  m_TagString: JanelaOpcoesMenu
+  m_TagString: WindowOptions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c04c8282c97c5949b5787585e7eb07c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cgoJanela: {fileID: 1025442033807647052}
+  cobjJanela: {fileID: 1025442033807647052}
 --- !u!1 &7623770755905598403
 GameObject:
   m_ObjectHideFlags: 0
