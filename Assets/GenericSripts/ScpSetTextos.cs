@@ -45,6 +45,9 @@ public class ScpSetTextos : MonoBehaviour
             case 6:
                 metSetEventWindowText();
                 break;
+            case 7:
+                metSetHealthWindowText();
+                break;
         }
     }
 
@@ -177,6 +180,38 @@ public class ScpSetTextos : MonoBehaviour
                 break;
             case 5:
                 metSetTexto("Registros", "Log");
+                break;
+        }
+    }
+
+    private void metSetHealthWindowText()
+    {
+        //-- Group 7
+        switch (piLanguageCode)
+        {
+            case 1:
+                metSetTexto("Saúde", "Health");
+                break;
+            case 2:
+                switch (StaticPersonagem.pfHealth)
+                {
+                    case float lfHealth when (lfHealth <= 25):
+                        metSetTexto("Status geral do corpo \n <color=#FF2D00>- A beira da morte</color>", "Overall Body Status \n  <color=#FF2D00>- Near death</color>");
+                        break;
+                    case float lfHealth when (lfHealth <= 50):
+                        metSetTexto("Status geral do corpo \n <color=#FFAE00>- Gravemente ferido</color>", "Overall Body Status \n <color=#FFAE00>- Severely injured</color>");
+                        break;
+                    case float lfHealth when (lfHealth <= 75):
+                        metSetTexto("Status geral do corpo \n <color=#FFE000>- Ferido</color>", "Overall Body Status \n <color=#FFE000>- Injured</color>");
+                        break;
+                    case float lfHealth when (lfHealth <= 99):
+                        metSetTexto("Status geral do corpo \n <color=#E4FF00>- Levemente ferido</color>", "Overall Body Status \n <color=#E4FF00>- Slightly injured</color>");
+                        break;
+                    case float lfHealth when (lfHealth <= 100):
+                        metSetTexto("Status geral do corpo \n <color=#6ABD01>- Ileso</color>", "Overall Body Status \n <color=#6ABD01>- Unhurt</color>");
+                        break;
+                }
+
                 break;
         }
     }

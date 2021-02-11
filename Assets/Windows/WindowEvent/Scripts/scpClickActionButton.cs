@@ -18,8 +18,8 @@ public class scpClickActionButton : MonoBehaviour
     private void Start()
     {
         pscpEscreveAcoes  = GameObject.Find("ContentHistoric").GetComponent<ScpEscreveAcoes>();
-        pscpPlayerActions = this.GetComponent<scpPlayerActions>();
-        pscpEnemyAction   = this.GetComponent<scpEnemyActions>();
+        pscpPlayerActions = new scpPlayerActions();
+        pscpEnemyAction = new scpEnemyActions();
 
         pscpPlayerActions.pscpEscreveAcoes = pscpEscreveAcoes;
         pscpPlayerActions.pscpEnemyInfo = pscpEnemyInfo;
@@ -35,15 +35,15 @@ public class scpClickActionButton : MonoBehaviour
             switch (plActionCode)
             {
                 case 0: //-- Melee Combat
-                    pscpPlayerActions.metMeleeCombat();
+                    pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
                     pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
                     break;
                 case 1: //-- Flee
-                    pscpPlayerActions.metFlee();
+                    pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
                     pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
                     break;
                 case 2: //-- Hide
-                    pscpPlayerActions.metHide();
+                    pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
                     pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
                     break;
             }   

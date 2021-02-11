@@ -8,8 +8,15 @@ public class scpEnemyActions : MonoBehaviour
     public scpEnemyInfo pscpEnemyInfo;
     public ScpEscreveAcoes pscpEscreveAcoes;
 
+    private scpSetRichText cscpSetRichText;
+
     public void metEnemyReaction(long pariActionType, long pariActionCode)
     {
+        if (cscpSetRichText == null)
+        {
+            cscpSetRichText = new scpSetRichText();
+        }
+
         if (pariActionType == 1)
         {
             switch (pariActionCode)
@@ -31,21 +38,86 @@ public class scpEnemyActions : MonoBehaviour
     {
         long llDefaultHitChance = 70;
         long llSkillDiff = 3;
+        long llSkillDiffDamage = 2;
         long llEnemyMelee = pscpEnemyInfo.plMelee;
         long llPlayerMelee = StaticPersonagem.plMelee;
 
         long EnemyHitChance = ((llEnemyMelee - llPlayerMelee) * llSkillDiff) + llDefaultHitChance;
-        Debug.Log(EnemyHitChance + "% enemy hit chance");
 
         long llChance = Random.Range(0, 100);
 
+        string lsTextStart = cscpSetRichText.metFindText(2, 3);//-- Try to attack
+        pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart);
+
         if (llChance <= EnemyHitChance)
         {
-            pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, "Chutou sua perna");
+            int llBodyPart = Random.Range(1, 17);
+            float lfDamage = Random.Range(0, 6) + (llEnemyMelee * llSkillDiffDamage);
+
+            switch (llBodyPart)
+            {
+
+                case 1:
+                    StaticPersonagem.pfHealthHead -= lfDamage;
+                    break;
+                case 2:
+                    StaticPersonagem.pfHealthNeck -= lfDamage;
+                    break;
+                case 3:
+                    StaticPersonagem.pfHealthChest -= lfDamage;
+                    break;
+                case 4:
+                    StaticPersonagem.pfHealthLeftShoulder -= lfDamage;
+                    break;
+                case 5:
+                    StaticPersonagem.pfHealthRightShoulder -= lfDamage;
+                    break;
+                case 6:
+                    StaticPersonagem.pfHealthLeftArm -= lfDamage;
+                    break;
+                case 7:
+                    StaticPersonagem.pfHealthRightArm -= lfDamage;
+                    break;
+                case 8:
+                    StaticPersonagem.pfHealthForearmLeft -= lfDamage;
+                    break;
+                case 9:
+                    StaticPersonagem.pfHealthForearmRight -= lfDamage;
+                    break;
+                case 10:
+                    StaticPersonagem.pfHealthHandLeft -= lfDamage;
+                    break;
+                case 11:
+                    StaticPersonagem.pfHealthHandRight -= lfDamage;
+                    break;
+                case 12:
+                    StaticPersonagem.pfHealthThighRight -= lfDamage;
+                    break;
+                case 13:
+                    StaticPersonagem.pfHealthThighLeft -= lfDamage;
+                    break;
+                case 14:
+                    StaticPersonagem.pfHealthShinLeft -= lfDamage;
+                    break;
+                case 15:
+                    StaticPersonagem.pfHealthShinRight -= lfDamage;
+                    break;
+                case 16:
+                    StaticPersonagem.pfHealthFeetLeft -= lfDamage;
+                    break;
+                case 17:
+                    StaticPersonagem.pfHealthFeetRight -= lfDamage;
+                    break;
+            }
+            lsTextStart = cscpSetRichText.metFindText(2, 1); //-- And hit
+            string lsBodyPartName = cscpSetRichText.metFindText(1, llBodyPart);
+
+            pscpEscreveAcoes.metDefaultText("<color=#FF2D00>" + lsTextStart + lsBodyPartName + "</color>");
         }
         else
         {
-            pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, "Errou o ataque");
+            lsTextStart = cscpSetRichText.metFindText(2, 2); //-- But miss
+            pscpEscreveAcoes.metDefaultText(lsTextStart);
         }
     }
 
@@ -57,7 +129,6 @@ public class scpEnemyActions : MonoBehaviour
         long llPlayerAthletics = StaticPersonagem.plAthletics;
 
         long llEnemyFleeChance = ((llEnemyAthletics - llPlayerAthletics) * llSkillDiff) + llDefaultFleeChance;
-        Debug.Log(llEnemyFleeChance + "% enemy flee chance");
 
         long llChance = Random.Range(0, 100);
 
@@ -79,7 +150,6 @@ public class scpEnemyActions : MonoBehaviour
         long llPlayerHide = StaticPersonagem.plSneak;
 
         long llEnemyHideChance = ((llEnemyHide - llPlayerHide) * llSkillDiff) + llDefaultHideChance;
-        Debug.Log(llEnemyHideChance + "% enemy hide chance");
 
         long llChance = Random.Range(0, 100);
 
