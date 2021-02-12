@@ -18,8 +18,8 @@ public class scpClickActionButton : MonoBehaviour
     private void Start()
     {
         pscpEscreveAcoes  = GameObject.Find("ContentHistoric").GetComponent<ScpEscreveAcoes>();
-        pscpPlayerActions = new scpPlayerActions();
-        pscpEnemyAction = new scpEnemyActions();
+        pscpPlayerActions = this.gameObject.AddComponent(typeof(scpPlayerActions)) as scpPlayerActions;
+        pscpEnemyAction = this.gameObject.AddComponent(typeof(scpEnemyActions)) as scpEnemyActions;
 
         pscpPlayerActions.pscpEscreveAcoes = pscpEscreveAcoes;
         pscpPlayerActions.pscpEnemyInfo = pscpEnemyInfo;

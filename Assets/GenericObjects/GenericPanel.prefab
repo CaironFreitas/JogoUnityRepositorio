@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7057173840620490927}
   - component: {fileID: 3580609895229756554}
-  - component: {fileID: 4480257506441520068}
   - component: {fileID: 2611057088346650426}
+  - component: {fileID: 2353291942922319243}
   m_Layer: 5
-  m_Name: TxtTitulo
+  m_Name: txtTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160.7, y: -14.405}
-  m_SizeDelta: {x: 314.9973, y: 28.809998}
+  m_AnchoredPosition: {x: 157.48, y: -20.06}
+  m_SizeDelta: {x: 308.56512, y: 20.888668}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3580609895229756554
 CanvasRenderer:
@@ -46,7 +46,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3056833276344667370}
   m_CullTransparentMesh: 0
---- !u!114 &4480257506441520068
+--- !u!114 &2611057088346650426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056833276344667370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4543bc4ed5270fa4cb40ee0d62779a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piLanguageGroup: 0
+  piLanguageCode: 0
+--- !u!114 &2353291942922319243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,11 +80,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: feeb0a8160aa2964cafa4c88b5f77002, type: 3}
     m_FontSize: 14
-    m_FontStyle: 1
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -78,21 +92,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
---- !u!114 &2611057088346650426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056833276344667370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4543bc4ed5270fa4cb40ee0d62779a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ciTipoTexto: 0
-  ciDescricaoTexto: 0
+  m_Text: Title
 --- !u!1 &7895793699269620072
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 9148807657642393824}
   - component: {fileID: 3673645431612152483}
   m_Layer: 5
-  m_Name: BGBordinha
+  m_Name: imgLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

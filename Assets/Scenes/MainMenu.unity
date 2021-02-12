@@ -730,9 +730,8 @@ GameObject:
   - component: {fileID: 721073288}
   - component: {fileID: 721073287}
   - component: {fileID: 721073290}
-  - component: {fileID: 721073291}
   m_Layer: 5
-  m_Name: BtnOpcoes
+  m_Name: btnOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -864,19 +863,6 @@ MonoBehaviour:
   cgoJanela: {fileID: 1025442033807647052, guid: a8fd48031a1dace4aa960aacd801bf36,
     type: 3}
   ccsMainCanvas: {fileID: 2147200539}
---- !u!114 &721073291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721073285}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a9619f5954eea4d861ba19be547d82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  psTag: WindowOptions
 --- !u!224 &835029872 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5127436820606347796, guid: 90dd857d32dfbb245850ed065c16f04b,
@@ -1049,10 +1035,9 @@ GameObject:
   - component: {fileID: 1215103326}
   - component: {fileID: 1215103325}
   - component: {fileID: 1215103324}
-  - component: {fileID: 1215103328}
   - component: {fileID: 1215103327}
   m_Layer: 5
-  m_Name: BtnNovoJogo
+  m_Name: btnNewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1121,7 +1106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1215103328}
+      - m_Target: {fileID: 1215103327}
         m_MethodName: metCriaJanela
         m_Mode: 1
         m_Arguments:
@@ -1178,25 +1163,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1215103322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a9619f5954eea4d861ba19be547d82, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab77b5a776500743be1021f3238d777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  psTag: WindowCreateCharacter
---- !u!114 &1215103328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215103322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35818f8803b3314497992124692ea39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cgoJanela: {fileID: 5772917731593059566, guid: 18dab880fe917fd4ea9e58cd26c425b8,
+  pobjJanela: {fileID: 3329666434206442543, guid: fee81a37dcbe59f4eb5f952acd6fbe8d,
     type: 3}
-  ccsMainCanvas: {fileID: 2147200539}
+  pcsMainCanvas: {fileID: 2147200539}
 --- !u!1 &1225953395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1182,7 @@ GameObject:
   - component: {fileID: 1225953398}
   - component: {fileID: 1225953397}
   m_Layer: 5
-  m_Name: BtnContinuar
+  m_Name: btnContinue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1491,7 +1463,7 @@ GameObject:
   - component: {fileID: 2045657003}
   - component: {fileID: 2045657006}
   m_Layer: 5
-  m_Name: BtnSair
+  m_Name: btnQuit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

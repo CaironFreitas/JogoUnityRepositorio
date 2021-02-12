@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticPersonagem : MonoBehaviour
+public static class StaticPersonagem
 {
     public static GameObject ObjJogador;
     public static GameObject ObjTileAtual;

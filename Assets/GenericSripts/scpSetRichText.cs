@@ -83,7 +83,7 @@ public class scpSetRichText : MonoBehaviour
             case 1:
                 return metSetText("E acertou ", "And hit ");
             case 2:
-                return metSetText("Mas errou o ataque ", "But missed the atack ");
+                return metSetText("Mas o inimigo se esquivou ", "But the enemy missed");
             case 3:
                 return metSetText("Tentou atacar! ", "Tried to attack! ");
            

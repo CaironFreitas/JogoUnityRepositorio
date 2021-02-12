@@ -19,7 +19,7 @@ public class ScpEscreveAcoes : MonoBehaviour
     {
         GameObject CloneOjbText = Instantiate(pobjText, pobjContent.transform);
 
-        CloneOjbText.GetComponent<Text>().text = "<b>" + ParNomeInimigo + "</b>: " + ParTexto;
+        CloneOjbText.GetComponent<Text>().text = ParNomeInimigo + ": " + ParTexto;
 
         ScrollToBottom(pscrollHistoric);
     }

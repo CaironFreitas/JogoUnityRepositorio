@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4084998863312602780}
   - component: {fileID: 5765986627726907145}
   m_Layer: 5
-  m_Name: BotaoGenerico
+  m_Name: GenericButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
+      propertyPath: m_Text
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
+        type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 4
       objectReference: {fileID: 0}
@@ -239,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 5951021055372182240, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: m_Name
-      value: TextGenerico
+      value: txtButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90dd857d32dfbb245850ed065c16f04b, type: 3}

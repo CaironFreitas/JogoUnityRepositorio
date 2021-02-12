@@ -10,13 +10,13 @@ public class scpEnemyActions : MonoBehaviour
 
     private scpSetRichText cscpSetRichText;
 
+    public void Start()
+    {
+        cscpSetRichText = this.gameObject.AddComponent(typeof(scpSetRichText)) as scpSetRichText;
+    }
+
     public void metEnemyReaction(long pariActionType, long pariActionCode)
     {
-        if (cscpSetRichText == null)
-        {
-            cscpSetRichText = new scpSetRichText();
-        }
-
         if (pariActionType == 1)
         {
             switch (pariActionCode)
@@ -47,7 +47,6 @@ public class scpEnemyActions : MonoBehaviour
         long llChance = Random.Range(0, 100);
 
         string lsTextStart = cscpSetRichText.metFindText(2, 3);//-- Try to attack
-        pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart);
 
         if (llChance <= EnemyHitChance)
         {
@@ -109,15 +108,15 @@ public class scpEnemyActions : MonoBehaviour
                     StaticPersonagem.pfHealthFeetRight -= lfDamage;
                     break;
             }
-            lsTextStart = cscpSetRichText.metFindText(2, 1); //-- And hit
+            string lsTextAction = cscpSetRichText.metFindText(2, 1); //-- And hit
             string lsBodyPartName = cscpSetRichText.metFindText(1, llBodyPart);
 
-            pscpEscreveAcoes.metDefaultText("<color=#FF2D00>" + lsTextStart + lsBodyPartName + "</color>");
+            pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart + staticGameBusinessLogic.psRedColorBad + lsTextAction + lsBodyPartName + "</color>");
         }
         else
         {
-            lsTextStart = cscpSetRichText.metFindText(2, 2); //-- But miss
-            pscpEscreveAcoes.metDefaultText(lsTextStart);
+            string lsTextAction = cscpSetRichText.metFindText(2, 2); //-- But miss
+            pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart + lsTextAction);
         }
     }
 
