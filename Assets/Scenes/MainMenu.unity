@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
@@ -363,7 +363,7 @@ PrefabInstance:
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: new game
       objectReference: {fileID: 0}
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
@@ -578,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: Options
       objectReference: {fileID: 0}
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
@@ -857,12 +857,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 721073285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35818f8803b3314497992124692ea39, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ab77b5a776500743be1021f3238d777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cgoJanela: {fileID: 1025442033807647052, guid: a8fd48031a1dace4aa960aacd801bf36,
+  pobjJanela: {fileID: 6957935980794821835, guid: 8f6a6e380b1fa274f878ec6a6681c4ea,
     type: 3}
-  ccsMainCanvas: {fileID: 2147200539}
+  pcsMainCanvas: {fileID: 2147200539}
 --- !u!224 &835029872 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5127436820606347796, guid: 90dd857d32dfbb245850ed065c16f04b,
@@ -1310,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}
       propertyPath: m_Text
-      value: 
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 4848683471325206234, guid: 90dd857d32dfbb245850ed065c16f04b,
         type: 3}

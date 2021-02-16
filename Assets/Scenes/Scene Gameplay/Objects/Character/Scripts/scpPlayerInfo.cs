@@ -65,43 +65,46 @@ public class scpPlayerInfo : MonoBehaviour
     {
         float lfHealthDamage = 0;
 
-        lfHealthDamage += metOveralDamageCalculation(cfHealthHead, 3, 15, 30, 50);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthNeck, 3, 15, 40, 60);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthChest, 3, 10, 25, 45);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthLeftShoulder, 3, 7, 20, 40);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthRightShoulder, 3, 7, 20, 40);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthLeftArm, 3, 7, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthRightArm, 3, 7, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthForearmLeft, 3, 7, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthForearmRight, 3, 7, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthHandLeft, 3, 6, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthHandRight, 3, 6, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthThighRight, 3, 8, 25, 45);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthThighLeft, 3, 8, 25, 45);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthShinRight, 3, 7, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthShinLeft, 3, 7, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthFeetRight, 3, 6, 20, 30);
-        lfHealthDamage += metOveralDamageCalculation(cfHealthFeetLeft, 3, 6, 20, 30);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthHead, 1.4f, 2.3f, 3, 7, 25, 50);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthNeck, 1.4f, 2.3f, 3, 7, 25, 50);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthChest, 1.4f, 2.3f, 3, 6, 25, 45);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthLeftShoulder, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthRightShoulder, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthLeftArm, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthRightArm, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthForearmLeft, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthForearmRight, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthHandLeft, 1.4f, 2.3f, 3, 5, 18, 30);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthHandRight, 1.4f, 2.3f, 3, 5, 18, 30);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthThighRight, 1.4f, 2.3f, 3, 7, 25, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthThighLeft, 1.4f, 2.3f, 3, 7, 25, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthShinRight, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthShinLeft, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthFeetRight, 1.4f, 2.3f, 3, 5, 18, 30);
+        lfHealthDamage += metOveralDamageCalculation(cfHealthFeetLeft, 1.4f, 2.3f, 3, 5, 18, 62);
 
         cfHealth = 100 - lfHealthDamage;
 
         StaticPersonagem.pfHealth = cfHealth;
     }
 
-    private float metOveralDamageCalculation(float parfBodyPartHealth, float parfSlightlyinjured, float parfInjured, float parfSeverelyinjured, float parfAlmostDeadBodyPart)
+    private float metOveralDamageCalculation(float parfBodyPartHealth, float parfScratches, float parfSuperficialInjury, float parfModerateInjury, float parfInjury, float parfSeriousInjury, float parfVerySeriousInjury)
     {
         switch (parfBodyPartHealth)
         {
-            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfNearDeath):
-                return parfAlmostDeadBodyPart;
-            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSeverelyInjured):
-                return parfSeverelyinjured;
-            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfInjured):
-                return parfInjured;
-            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSlightlyInjured):
-                return parfSlightlyinjured;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfVerySeriousInjury):
+                return parfVerySeriousInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSeriousInjury):
+                return parfSeriousInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfInjury):
+                return parfInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfModerateInjury):
+                return parfModerateInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSuperficialInjury):
+                return parfSuperficialInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfScratches):
+                return parfScratches;
         }
-
         return 0;
     }
 }

@@ -7,6 +7,7 @@ public class ScpEscreveAcoes : MonoBehaviour
 {
     public GameObject pobjText;
     public GameObject pobjContent;
+    public long plRoundCount;
 
     private ScrollRect pscrollHistoric;
 

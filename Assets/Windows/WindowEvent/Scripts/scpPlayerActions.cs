@@ -51,7 +51,7 @@ public class scpPlayerActions : MonoBehaviour
 
         if (llChance <= llPlayerHitChance)
         {
-            int llBodyPart = Random.Range(1, 17);
+            int llBodyPart = Random.Range(1, 18);
             float lfDamage = Random.Range(0, 6) + (llEnemyMelee * llSkillDiffDamage);
 
             switch (llBodyPart)

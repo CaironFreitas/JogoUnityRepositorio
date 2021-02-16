@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 6958402369435411655}
   - component: {fileID: 4923033927200610368}
   m_Layer: 5
-  m_Name: txtSkill
+  m_Name: objSkillManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,12 +175,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 090a04dab1278c6429cff1d8ff55f4a6, type: 3}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 300
-    m_Alignment: 2
+    m_Alignment: 5
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1

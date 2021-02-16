@@ -95,8 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a655a03c32f5a544f81deba1bcc77b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pobjEventWindow: {fileID: 2635347505990421636, guid: b9edb513b088b2c40bcb66b50ecac5dc,
+  pobjEventWindow: {fileID: 9013537231114991029, guid: ffa46679fb63b0548a353ec1b74519c8,
     type: 3}
+  pscpEnemyInfo: {fileID: 0}
 --- !u!114 &5097172870416432567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,4 +110,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85640c09586293a4aafac3e52fdfe6dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plMeleeCombat: 0
+  psName: 
+  plMelee: 0
+  plRange: 0
+  plAthletics: 0
+  plSneak: 0
+  pfHealth: 0
+  pfHealthHead: 0
+  pfHealthNeck: 0
+  pfHealthChest: 0
+  pfHealthLeftShoulder: 0
+  pfHealthRightShoulder: 0
+  pfHealthLeftArm: 0
+  pfHealthRightArm: 0
+  pfHealthForearmLeft: 0
+  pfHealthForearmRight: 0
+  pfHealthHandLeft: 0
+  pfHealthHandRight: 0
+  pfHealthThighRight: 0
+  pfHealthThighLeft: 0
+  pfHealthShinRight: 0
+  pfHealthShinLeft: 0
+  pfHealthFeetRight: 0
+  pfHealthFeetLeft: 0
+  piCombatOptions: 
+  piDialogueOptions: 

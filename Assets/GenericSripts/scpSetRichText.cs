@@ -20,6 +20,12 @@ public class scpSetRichText : MonoBehaviour
                 return metCombatText(pariLanguageCode);
             case 3:
                 return metPlayerText(pariLanguageCode);
+            case 4:
+                return metRoundInfo(pariLanguageCode);
+            case 5:
+                return metBodyPart(pariLanguageCode);
+            case 6:
+                return metBodyPartInjure(pariLanguageCode);
         }
 
         return "ERRO";
@@ -86,7 +92,9 @@ public class scpSetRichText : MonoBehaviour
                 return metSetText("Mas o inimigo se esquivou ", "But the enemy missed");
             case 3:
                 return metSetText("Tentou atacar! ", "Tried to attack! ");
-           
+            case 4:
+                return metSetText("Mas você se esquivou ", "But you missed");
+
             default:
                 return "ERROR";
 
@@ -103,6 +111,85 @@ public class scpSetRichText : MonoBehaviour
             default:
                 return "ERROR";
 
+        }
+    }
+
+    //-- Group 4
+    private string metRoundInfo(int pariLanguageCode)
+    {
+        switch (pariLanguageCode)
+        {
+            case 1:
+                return metSetText("concluído", "finished");
+            default:
+                return "ERROR";
+
+        }
+    }
+
+    //-- Group 5
+    private string metBodyPart(int pariLanguageCode)
+    {
+        switch (pariLanguageCode)
+        {
+            case 1:
+                return metSetText("Cabeça", "Head");
+            case 2:
+                return metSetText("Pescoço", "Neck");
+            case 3:
+                return metSetText("Peito", "Chest");
+            case 4:
+                return metSetText("Ombro esquerdo", "Left shoulder");
+            case 5:
+                return metSetText("Ombro direito", "Right shoulder");
+            case 6:
+                return metSetText("Braço esquerdo", "Left arm");
+            case 7:
+                return metSetText("Braço direito", "Right arm");
+            case 8:
+                return metSetText("Antebraço esquerdo", "Left forearm");
+            case 9:
+                return metSetText("Antebraço direito", "Right forearm");
+            case 10:
+                return metSetText("Mão esquerda", "Left hand");
+            case 11:
+                return metSetText("Mão direita", "Right hand");
+            case 12:
+                return metSetText("Coxa direita", "Right thigh");
+            case 13:
+                return metSetText("Coxa esquerda", "Left thigh");
+            case 14:
+                return metSetText("Canela esquerda", "Left shin");
+            case 15:
+                return metSetText("Canela direita", "Right shin");
+            case 16:
+                return metSetText("Pé esquerdo", "Left feet");
+            case 17:
+                return metSetText("Pé direito", "Right feet");
+            default:
+                return "ERROR";
+        }
+    }
+
+    //-- Group 6
+    private string metBodyPartInjure(int pariLanguageCode)
+    {
+        switch (pariLanguageCode)
+        {
+            case 1:
+                return staticGameBusinessLogic.psColorScratches + metSetText("Arranhões e/ou pequenas contusões", "Scratches and/or minor bruises") + "</color>";
+            case 2:
+                return staticGameBusinessLogic.psColorSuperficialInjury + metSetText( "Ferimento superficial", "Superficial injury") + "</color>";
+            case 3:
+                return staticGameBusinessLogic.psColorModerateInjury + metSetText("Ferimento moderado", "Moderate injury") + "</color>";
+            case 4:
+                return staticGameBusinessLogic.psColorInjury + metSetText("Ferimento", "Injury") + "</color>";
+            case 5:
+                return staticGameBusinessLogic.psColorSeriousInjury + metSetText("Ferimento grave", "Serious injury") + "</color>";
+            case 6:
+                return staticGameBusinessLogic.psColorVerySeriousInjury + metSetText("Ferimento muito grave", "Very serious injury") + "</color>";
+            default:
+                return "ERROR";
         }
     }
 }

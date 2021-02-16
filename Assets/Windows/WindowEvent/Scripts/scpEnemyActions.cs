@@ -50,7 +50,7 @@ public class scpEnemyActions : MonoBehaviour
 
         if (llChance <= EnemyHitChance)
         {
-            int llBodyPart = Random.Range(1, 17);
+            int llBodyPart = Random.Range(1, 18);
             float lfDamage = Random.Range(0, 6) + (llEnemyMelee * llSkillDiffDamage);
 
             switch (llBodyPart)
@@ -115,7 +115,7 @@ public class scpEnemyActions : MonoBehaviour
         }
         else
         {
-            string lsTextAction = cscpSetRichText.metFindText(2, 2); //-- But miss
+            string lsTextAction = cscpSetRichText.metFindText(2, 4); //-- But miss
             pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart + lsTextAction);
         }
     }

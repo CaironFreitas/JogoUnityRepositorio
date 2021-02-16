@@ -18,6 +18,7 @@ public class scpCreateCentralizeWindow : MonoBehaviour
         {
             GameObject CloneCgoJanela = Instantiate(pobjJanela, pcsMainCanvas.transform);
             cgoCreatedWindow = CloneCgoJanela;
+            cgoCreatedWindow.transform.GetChild(0).transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 }

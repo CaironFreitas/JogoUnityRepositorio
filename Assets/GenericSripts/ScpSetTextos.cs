@@ -48,9 +48,6 @@ public class ScpSetTextos : MonoBehaviour
             case 7:
                 metSetHealthWindowText();
                 break;
-            case 8:
-                metSetHealthWindowBodyPartText();
-                break;
         }
     }
 
@@ -124,7 +121,7 @@ public class ScpSetTextos : MonoBehaviour
                 metSetTexto("Idioma", "Language");
                 break;
             case 2:
-                metSetTexto("PREFERÊNCIAS", "PREFERENCES");
+                metSetTexto("Preferências", "Preferences");
                 break;
             case 3:
                 metSetTexto("Salvar", "Save");
@@ -138,7 +135,7 @@ public class ScpSetTextos : MonoBehaviour
         switch (piLanguageCode)
         {
             case 1:
-                metSetTexto("Ataque desarmado", "Unarmed atack");
+                metSetTexto("Ataque desarmado", "Unarmed attack");
                 break;
             case 2:
                 metSetTexto("Fugir", "Flee");
@@ -199,54 +196,25 @@ public class ScpSetTextos : MonoBehaviour
                 switch (StaticPersonagem.pfHealth)
                 {
                     case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfNearDeath):
-                        metSetTexto("Status geral do corpo \n <color=#FF2D00>- A beira da morte</color>", "Overall Body Status \n  <color=#FF2D00>- Near death</color>");
+                        metSetTexto("Status geral do corpo \n <color=#FF2D00>- A beira da morte</color>", "Overall Body Status \n  <color=#FF2D00>- Near death</color> \n");
                         break;
                     case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSeverelyInjured):
-                        metSetTexto("Status geral do corpo \n <color=#FFAE00>- Gravemente ferido</color>", "Overall Body Status \n <color=#FFAE00>- Severely injured</color>");
+                        metSetTexto("Status geral do corpo \n <color=#FFAE00>- Gravemente ferido</color>", "Overall Body Status \n <color=#FFAE00>- Severely injured</color> \n");
                         break;
                     case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfInjured):
-                        metSetTexto("Status geral do corpo \n <color=#FFE000>- Ferido</color>", "Overall Body Status \n <color=#FFE000>- Injured</color>");
+                        metSetTexto("Status geral do corpo \n <color=#FFE000>- Ferido</color>", "Overall Body Status \n <color=#FFE000>- Injured</color> \n");
                         break;
                     case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSlightlyInjured):
-                        metSetTexto("Status geral do corpo \n <color=#E4FF00>- Levemente ferido</color>", "Overall Body Status \n <color=#E4FF00>- Slightly injured</color>");
+                        metSetTexto("Status geral do corpo \n <color=#E4FF00>- Levemente ferido</color>", "Overall Body Status \n <color=#E4FF00>- Slightly injured</color> \n");
                         break;
                     case float lfHealth when (lfHealth <= 100):
-                        metSetTexto("Status geral do corpo \n <color=#6ABD01>- Ileso</color>", "Overall Body Status \n <color=#6ABD01>- Unhurt</color>");
+                        metSetTexto("Status geral do corpo \n <color=#6ABD01>- Ileso</color>", "Overall Body Status \n <color=#6ABD01>- Unhurt</color> \n");
                         break;
                 }
 
                 break;
             case 3:
                 metSetTexto("Status das partes do corpo", "Body parts status");
-                break;
-        }
-    }
-
-    private void metSetHealthWindowBodyPartText()
-    {
-        //-- Group 8
-        switch (piLanguageCode)
-        {
-            case 1:
-                switch (StaticPersonagem.pfHealth)
-                {
-                    case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfNearDeath):
-                        metSetTexto("Status geral do corpo \n <color=#FF2D00>- A beira da morte</color>", "Overall Body Status \n  <color=#FF2D00>- Near death</color>");
-                        break;
-                    case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSeverelyInjured):
-                        metSetTexto("Status geral do corpo \n <color=#FFAE00>- Gravemente ferido</color>", "Overall Body Status \n <color=#FFAE00>- Severely injured</color>");
-                        break;
-                    case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfInjured):
-                        metSetTexto("Status geral do corpo \n <color=#FFE000>- Ferido</color>", "Overall Body Status \n <color=#FFE000>- Injured</color>");
-                        break;
-                    case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSlightlyInjured):
-                        metSetTexto("Status geral do corpo \n <color=#E4FF00>- Levemente ferido</color>", "Overall Body Status \n <color=#E4FF00>- Slightly injured</color>");
-                        break;
-                    case float lfHealth when (lfHealth <= 100):
-                        metSetTexto("Status geral do corpo \n <color=#6ABD01>- Ileso</color>", "Overall Body Status \n <color=#6ABD01>- Unhurt</color>");
-                        break;
-                }
-
                 break;
         }
     }
