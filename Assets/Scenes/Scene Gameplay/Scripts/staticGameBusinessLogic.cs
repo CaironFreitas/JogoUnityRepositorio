@@ -4,9 +4,17 @@ using UnityEngine;
 
 public static class staticGameBusinessLogic
 {
+    [Header("Combat")]
+    //-- Melee combat (default player and enemy)
+    public static float pfMeleeDefaultHitChance = 70;
+    public static float pfMeleeSkillDiff = 4;
+    public static float pfMeleeSkillDiffDamage = 4;
+
+    [Header("Character creation")]
     //-- Character creation
     public static long plStartSkillPoints = 15;
 
+    [Header("Body damage")]
     //-- Overall body damage
     public static float pfSlightlyInjured = 99;
     public static float pfInjured = 75;
@@ -21,6 +29,7 @@ public static class staticGameBusinessLogic
     public static float pfSeriousInjury= 25;
     public static float pfVerySeriousInjury = 2;
 
+    [Header("Colors")]
     //-- Body parts color
     public static string psColorScratches = "<color=#c6e000>";
     public static string psColorSuperficialInjury = "<color=#dce000>";

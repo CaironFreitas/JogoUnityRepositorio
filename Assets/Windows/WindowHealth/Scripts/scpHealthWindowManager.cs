@@ -46,8 +46,8 @@ public class scpHealthWindowManager : MonoBehaviour
         metCreateBodyPartInfo(StaticPersonagem.pfHealthForearmRight, ref pobjRightForearmHealthInfo, 5, 9);
         metCreateBodyPartInfo(StaticPersonagem.pfHealthHandLeft, ref pobjLeftHandHealthInfo, 5, 10);
         metCreateBodyPartInfo(StaticPersonagem.pfHealthHandRight, ref pobjRightHandHealthInfo, 5, 11);
-        metCreateBodyPartInfo(StaticPersonagem.pfHealthThighRight, ref pobjRightThighHealthInfo, 5, 12);
         metCreateBodyPartInfo(StaticPersonagem.pfHealthThighLeft, ref pobjLeftThighHealthInfo, 5, 13);
+        metCreateBodyPartInfo(StaticPersonagem.pfHealthThighRight, ref pobjRightThighHealthInfo, 5, 12);
         metCreateBodyPartInfo(StaticPersonagem.pfHealthShinLeft, ref pobjLeftShinHealthInfo, 5, 14);
         metCreateBodyPartInfo(StaticPersonagem.pfHealthShinRight, ref pobjRightShinHealthInfo, 5, 15);
         metCreateBodyPartInfo(StaticPersonagem.pfHealthFeetLeft, ref pobjLeftFeetHealthInfo, 5, 16);

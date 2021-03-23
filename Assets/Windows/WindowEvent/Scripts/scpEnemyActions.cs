@@ -9,10 +9,12 @@ public class scpEnemyActions : MonoBehaviour
     public ScpEscreveAcoes pscpEscreveAcoes;
 
     private scpSetRichText cscpSetRichText;
+    private scpBattleCalculation cscpBattleCalculation;
 
     public void Start()
     {
         cscpSetRichText = this.gameObject.AddComponent(typeof(scpSetRichText)) as scpSetRichText;
+        cscpBattleCalculation = this.gameObject.AddComponent(typeof(scpBattleCalculation)) as scpBattleCalculation;
     }
 
     public void metEnemyReaction(long pariActionType, long pariActionCode)
@@ -36,86 +38,22 @@ public class scpEnemyActions : MonoBehaviour
 
     public void metMeleeCombat()
     {
-        long llDefaultHitChance = 70;
-        long llSkillDiff = 3;
-        long llSkillDiffDamage = 2;
-        long llEnemyMelee = pscpEnemyInfo.plMelee;
-        long llPlayerMelee = StaticPersonagem.plMelee;
+        //-- Text introduction
+        string lsTextStart = cscpSetRichText.metFindText(2, 3);//-- Log - Try to attack
 
-        long EnemyHitChance = ((llEnemyMelee - llPlayerMelee) * llSkillDiff) + llDefaultHitChance;
+        //-- Attack mechanics and log fill
+        int llBodyPart = 0;
+        string lsTextAction = "";
+        string lsBodyPartName = "";
 
-        long llChance = Random.Range(0, 100);
-
-        string lsTextStart = cscpSetRichText.metFindText(2, 3);//-- Try to attack
-
-        if (llChance <= EnemyHitChance)
-        {
-            int llBodyPart = Random.Range(1, 18);
-            float lfDamage = Random.Range(0, 6) + (llEnemyMelee * llSkillDiffDamage);
-
-            switch (llBodyPart)
-            {
-
-                case 1:
-                    StaticPersonagem.pfHealthHead -= lfDamage;
-                    break;
-                case 2:
-                    StaticPersonagem.pfHealthNeck -= lfDamage;
-                    break;
-                case 3:
-                    StaticPersonagem.pfHealthChest -= lfDamage;
-                    break;
-                case 4:
-                    StaticPersonagem.pfHealthLeftShoulder -= lfDamage;
-                    break;
-                case 5:
-                    StaticPersonagem.pfHealthRightShoulder -= lfDamage;
-                    break;
-                case 6:
-                    StaticPersonagem.pfHealthLeftArm -= lfDamage;
-                    break;
-                case 7:
-                    StaticPersonagem.pfHealthRightArm -= lfDamage;
-                    break;
-                case 8:
-                    StaticPersonagem.pfHealthForearmLeft -= lfDamage;
-                    break;
-                case 9:
-                    StaticPersonagem.pfHealthForearmRight -= lfDamage;
-                    break;
-                case 10:
-                    StaticPersonagem.pfHealthHandLeft -= lfDamage;
-                    break;
-                case 11:
-                    StaticPersonagem.pfHealthHandRight -= lfDamage;
-                    break;
-                case 12:
-                    StaticPersonagem.pfHealthThighRight -= lfDamage;
-                    break;
-                case 13:
-                    StaticPersonagem.pfHealthThighLeft -= lfDamage;
-                    break;
-                case 14:
-                    StaticPersonagem.pfHealthShinLeft -= lfDamage;
-                    break;
-                case 15:
-                    StaticPersonagem.pfHealthShinRight -= lfDamage;
-                    break;
-                case 16:
-                    StaticPersonagem.pfHealthFeetLeft -= lfDamage;
-                    break;
-                case 17:
-                    StaticPersonagem.pfHealthFeetRight -= lfDamage;
-                    break;
-            }
-            string lsTextAction = cscpSetRichText.metFindText(2, 1); //-- And hit
-            string lsBodyPartName = cscpSetRichText.metFindText(1, llBodyPart);
-
+        if (cscpBattleCalculation.metEnemyMeleeAttack(pscpEnemyInfo, ref llBodyPart)) {
+            lsTextAction = cscpSetRichText.metFindText(2, 1); //-- Log - And hit
+            lsBodyPartName = cscpSetRichText.metFindText(1, llBodyPart);
             pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart + staticGameBusinessLogic.psRedColorBad + lsTextAction + lsBodyPartName + "</color>");
         }
         else
         {
-            string lsTextAction = cscpSetRichText.metFindText(2, 4); //-- But miss
+            lsTextAction = cscpSetRichText.metFindText(2, 4); //-- Log - But miss
             pscpEscreveAcoes.metDefaultText(pscpEnemyInfo.psName, lsTextStart + lsTextAction);
         }
     }

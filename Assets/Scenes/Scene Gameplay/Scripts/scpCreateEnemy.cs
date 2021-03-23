@@ -15,6 +15,7 @@ public class scpCreateEnemy : MonoBehaviour
         {
             if (staticScpMapProperties.psbMapaCriado)
             {
+                //-- Create enemy on a random tile
                 int liHeight = Random.Range(0, staticScpMapProperties.psiMapHeight);
                 int liWeight = Random.Range(0, staticScpMapProperties.psiMapWeight);
 
@@ -22,9 +23,14 @@ public class scpCreateEnemy : MonoBehaviour
 
                 GameObject lobjTileRandom = GameObject.Find(lsTileName);
 
-                GameObject CloneDefaultEnemy = Instantiate(pobjDefaultEnemy);
+                if (lobjTileRandom != StaticPersonagem.ObjTileAtual)
+                {
+                    GameObject CloneDefaultEnemy = Instantiate(pobjDefaultEnemy);
 
-                CloneDefaultEnemy.transform.position = lobjTileRandom.transform.position;
+                    CloneDefaultEnemy.transform.position = lobjTileRandom.transform.position;
+                    scpEnemyInfo lscpEnemyInfo = CloneDefaultEnemy.GetComponent<scpEnemyInfo>();
+                    lscpEnemyInfo.pobjCurrentEnemyTile = lobjTileRandom;
+                }
             }
         }
     }

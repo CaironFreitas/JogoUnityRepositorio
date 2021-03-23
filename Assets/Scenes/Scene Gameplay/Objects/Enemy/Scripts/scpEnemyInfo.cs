@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class scpEnemyInfo : MonoBehaviour
 {
-    [Header("Main Properties")]
+    [Header("Map/position info")]
+    public GameObject pobjCurrentEnemyTile;
+
+    [Header("Main info")]
     public string psName;
     public long plMelee;
     public long plRange;
@@ -30,10 +33,6 @@ public class scpEnemyInfo : MonoBehaviour
     public float pfHealthShinLeft;
     public float pfHealthFeetRight;
     public float pfHealthFeetLeft;
-
-    [Header("Possible event options")]
-    public int[] piCombatOptions;
-    public int[] piDialogueOptions;
 
     private void Start()
     {
@@ -68,10 +67,13 @@ public class scpEnemyInfo : MonoBehaviour
                 pfHealthFeetRight = metRandomHealthPropertie(95, 98, 100);
                 pfHealthFeetLeft = metRandomHealthPropertie(95, 98, 100);
 
-                piCombatOptions = new int[3] {0, 1, 2};
-                piDialogueOptions = new int[0];
                 break;
         }
+    }
+
+    private void Update()
+    {
+        metHealthCalculation();
     }
 
     private float metRandomHealthPropertie(int pariUnhurtChance, int pariSlightlyinjuredChance, int pariHurtChance)
@@ -88,5 +90,50 @@ public class scpEnemyInfo : MonoBehaviour
         }
 
         return 100;
+    }
+
+    private void metHealthCalculation()
+    {
+        float lfHealthDamage = 0;
+
+        lfHealthDamage += metOveralDamageCalculation(pfHealthHead, 1.4f, 2.3f, 3, 7, 25, 50);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthNeck, 1.4f, 2.3f, 3, 7, 25, 50);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthChest, 1.4f, 2.3f, 3, 6, 25, 45);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthLeftShoulder, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthRightShoulder, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthLeftArm, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthRightArm, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthForearmLeft, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthForearmRight, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthHandLeft, 1.4f, 2.3f, 3, 5, 18, 30);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthHandRight, 1.4f, 2.3f, 3, 5, 18, 30);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthThighRight, 1.4f, 2.3f, 3, 7, 25, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthThighLeft, 1.4f, 2.3f, 3, 7, 25, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthShinRight, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthShinLeft, 1.4f, 2.3f, 3, 6, 20, 40);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthFeetRight, 1.4f, 2.3f, 3, 5, 18, 30);
+        lfHealthDamage += metOveralDamageCalculation(pfHealthFeetLeft, 1.4f, 2.3f, 3, 5, 18, 62);
+
+        pfHealth = 100 - lfHealthDamage;
+    }
+
+    private float metOveralDamageCalculation(float parfBodyPartHealth, float parfScratches, float parfSuperficialInjury, float parfModerateInjury, float parfInjury, float parfSeriousInjury, float parfVerySeriousInjury)
+    {
+        switch (parfBodyPartHealth)
+        {
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfVerySeriousInjury):
+                return parfVerySeriousInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSeriousInjury):
+                return parfSeriousInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfInjury):
+                return parfInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfModerateInjury):
+                return parfModerateInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfSuperficialInjury):
+                return parfSuperficialInjury;
+            case float lfHealth when (lfHealth <= staticGameBusinessLogic.pfScratches):
+                return parfScratches;
+        }
+        return 0;
     }
 }

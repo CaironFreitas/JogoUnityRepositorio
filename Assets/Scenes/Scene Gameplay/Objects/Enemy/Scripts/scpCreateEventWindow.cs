@@ -18,14 +18,15 @@ public class scpCreateEventWindow : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (StaticPersonagem.ObjJogador.transform.position == this.transform.position)
+        if (StaticPersonagem.ObjTileAtual == pscpEnemyInfo.pobjCurrentEnemyTile)
         {
             if (GameObject.FindGameObjectsWithTag("WindowEvent").GetUpperBound(0) < 0)
             {
-                GameObject CloneCgoJanela            = Instantiate(pobjEventWindow, cobjMainCanvas.transform);
+                GameObject CloneCgoJanela = Instantiate(pobjEventWindow, cobjMainCanvas.transform);
+
                 ScpCriaBotoesAcao lscpCriaBotoesAcao = CloneCgoJanela.GetComponent<ScpCriaBotoesAcao>();
 
-                lscpCriaBotoesAcao.metStartEvent(pscpEnemyInfo);
+                lscpCriaBotoesAcao.pscpEnemyInfo = pscpEnemyInfo;
             }
         }
     }
