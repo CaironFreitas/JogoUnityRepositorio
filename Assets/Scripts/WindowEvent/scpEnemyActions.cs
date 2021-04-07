@@ -19,20 +19,37 @@ public class scpEnemyActions : MonoBehaviour
 
     public void metEnemyReaction(long pariActionType, long pariActionCode)
     {
-        if (pariActionType == 1)
+        switch (pariActionType)
         {
-            switch (pariActionCode)
-            {
-                case 0: //-- Player tried to hit
-                    metMeleeCombat();
-                    break;
-                case 1: //-- Player tried to flee
-                    metMeleeCombat();
-                    break;
-                case 2: //-- Player tried to hide
-                    metMeleeCombat();
-                    break;
-            }
+            case 1:
+                switch (pariActionCode)
+                {
+                    case 0: //-- Player tried to hit
+                        metMeleeCombat();
+                        break;
+                    case 1: //-- Player tried to flee
+                        metMeleeCombat();
+                        break;
+                    case 2: //-- Player tried to hide
+                        metMeleeCombat();
+                        break;
+                }
+                break;
+
+            case 2:
+                switch (pariActionCode)
+                {
+                    case 0: //-- Player tried to sneak
+                        metMeleeCombat();
+                        break;
+                    case 1: //-- Player tried to walk
+                        metMeleeCombat();
+                        break;
+                    case 2: //-- Player tried to run
+                        metMeleeCombat();
+                        break;
+                }
+                break;
         }
     }
 

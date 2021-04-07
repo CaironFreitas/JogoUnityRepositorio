@@ -6,6 +6,7 @@ public class scpEnemyInfo : MonoBehaviour
 {
     [Header("Map/position info")]
     public GameObject pobjCurrentEnemyTile;
+    public GameObject pobjEnemy;
 
     [Header("Main info")]
     public string psName;
@@ -36,6 +37,7 @@ public class scpEnemyInfo : MonoBehaviour
 
     private void Start()
     {
+        pobjEnemy = this.gameObject;
         string lsEnemyTag = this.tag;
 
         switch (lsEnemyTag)

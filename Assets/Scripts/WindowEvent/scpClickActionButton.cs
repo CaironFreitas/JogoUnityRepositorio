@@ -32,24 +32,8 @@ public class scpClickActionButton : MonoBehaviour
 
     public void metClickButton()
     {
-        if (plActionType == 1)
-        {
-            switch (plActionCode)
-            {
-                case 0: //-- Melee Combat
-                    pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
-                    pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
-                    break;
-                case 1: //-- Flee
-                    pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
-                    pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
-                    break;
-                case 2: //-- Hide
-                    pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
-                    pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
-                    break;
-            }
-        }
+        pscpPlayerActions.metPlayerAction(plActionType, plActionCode);
+        pscpEnemyAction.metEnemyReaction(plActionType, plActionCode);
 
         pscpEscreveAcoes.plRoundCount++;
         pscpEscreveAcoes.metDefaultText(staticGameBusinessLogic.psOrangeInformation + "(Round " + pscpEscreveAcoes.plRoundCount + " " + cscpSetRichText.metFindText(4, 1) + ")</color>");

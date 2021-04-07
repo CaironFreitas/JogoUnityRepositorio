@@ -22,8 +22,10 @@ public class scpActionButtonManager : MonoBehaviour
 
     [Header("Objects to instantiate and create")]
     public GameObject pobjBtnOpcoes;
-    public GameObject pobjContent;
     public GameObject pobjTxtOpcoes;
+
+    [Header("Contents")]
+    public GameObject pobjContent;
 
     [Header("Enemy info (set by triggering event window)")]
     public scpEnemyInfo pscpEnemyInfo;
@@ -42,6 +44,11 @@ public class scpActionButtonManager : MonoBehaviour
     private GameObject cobjWalkButton;
     private GameObject cobjRunButton;
 
+    private void Start()
+    {
+        pscpEnemyInfo = staticWindowEvent.pscpEnemyInfo;
+    }
+
     private void Update()
     {
         MetCombatButtonsGenerator();
@@ -50,45 +57,59 @@ public class scpActionButtonManager : MonoBehaviour
 
     private void MetCombatButtonsGenerator()
     {
-        MetCriaBotao(ref cobjMeleeButton, MELEE_CODE, 4, 1, TYPE_COMBAT, pspIconesCombate);
-        MetCriaBotao(ref cobjFleeButton, FLEE_CODE, 4, 2, TYPE_COMBAT, pspIconesCombate);
-        MetCriaBotao(ref cobjHideButton, HIDE_CODE, 4, 3, TYPE_COMBAT, pspIconesCombate);
+        bool lbVeryNearDistance = staticWindowEvent.plDistance > 1;
+
+        MetCriaBotao(ref cobjMeleeButton, MELEE_CODE, 4, 1, TYPE_COMBAT, pspIconesCombate, lbVeryNearDistance);
+        MetCriaBotao(ref cobjFleeButton, FLEE_CODE, 4, 2, TYPE_COMBAT, pspIconesCombate, false);
+        MetCriaBotao(ref cobjHideButton, HIDE_CODE, 4, 3, TYPE_COMBAT, pspIconesCombate, false);
     }
 
     private void MetMoveButtonsGenerator()
     {
-        MetCriaBotao(ref cobjSneakButton, SNEAK_CODE, 8, 1, TYPE_MOVE, pspIconesMove);
-        MetCriaBotao(ref cobjWalkButton, WALK_CODE, 8, 2, TYPE_MOVE, pspIconesMove);
-        MetCriaBotao(ref cobjRunButton, RUN_CODE, 8, 3, TYPE_MOVE, pspIconesMove);
+        bool lbVeryNearDistance = staticWindowEvent.plDistance <= 1;
+
+        MetCriaBotao(ref cobjSneakButton, SNEAK_CODE, 8, 1, TYPE_MOVE, pspIconesMove, lbVeryNearDistance);
+        MetCriaBotao(ref cobjWalkButton, WALK_CODE, 8, 2, TYPE_MOVE, pspIconesMove, lbVeryNearDistance);
+        MetCriaBotao(ref cobjRunButton, RUN_CODE, 8, 3, TYPE_MOVE, pspIconesMove, lbVeryNearDistance);
     }
 
-    private void MetCriaBotao(ref GameObject parActionButton, int pariCodigoBotao, int pariLanguageGroup, int pariLanguageCode, int pariActionType, Sprite[] parspIcones)
+    private void MetCriaBotao(ref GameObject parActionButton, int pariCodigoBotao, int pariLanguageGroup, int pariLanguageCode, int pariActionType, Sprite[] parspIcones, bool parbDestroyCondition)
     {
-        if (parActionButton == null)
+        if (parbDestroyCondition)
         {
-            GameObject CloneCobjBtnOpcoes = Instantiate(pobjBtnOpcoes);
-            parActionButton = CloneCobjBtnOpcoes;
+            if (parActionButton != null)
+            {
+                Destroy(parActionButton);
+            }
+        }
+        else
+        {
+            if (parActionButton == null)
+            {
+                GameObject CloneCobjBtnOpcoes = Instantiate(pobjBtnOpcoes);
+                parActionButton = CloneCobjBtnOpcoes;
 
-            Image lImgSprite = CloneCobjBtnOpcoes.transform.Find("IconeBtn").gameObject.GetComponent<Image>();
-            ScpSetTextos lscpSetTextos = CloneCobjBtnOpcoes.GetComponentInChildren<ScpSetTextos>();
-            scpClickActionButton lscpClickActionButton = CloneCobjBtnOpcoes.GetComponent<scpClickActionButton>();
+                Image lImgSprite = CloneCobjBtnOpcoes.transform.Find("IconeBtn").gameObject.GetComponent<Image>();
+                ScpSetTextos lscpSetTextos = CloneCobjBtnOpcoes.GetComponentInChildren<ScpSetTextos>();
+                scpClickActionButton lscpClickActionButton = CloneCobjBtnOpcoes.GetComponent<scpClickActionButton>();
 
-            //-- Set button text
-            lscpSetTextos.piLanguageCode = pariLanguageCode;
-            lscpSetTextos.piLanguageGroup = pariLanguageGroup;
+                //-- Set button text
+                lscpSetTextos.piLanguageCode = pariLanguageCode;
+                lscpSetTextos.piLanguageGroup = pariLanguageGroup;
 
-            //-- Set Button Icon
-            lImgSprite.sprite = parspIcones[pariCodigoBotao];
+                //-- Set Button Icon
+                lImgSprite.sprite = parspIcones[pariCodigoBotao];
 
-            //-- Set Button Position
-            CloneCobjBtnOpcoes.transform.GetComponent<RectTransform>().SetParent(pobjContent.gameObject.GetComponent<RectTransform>().transform);
-            CloneCobjBtnOpcoes.GetComponent<RectTransform>().transform.localPosition = new Vector3(0.0f, 0.0f, 356.6f);
-            CloneCobjBtnOpcoes.GetComponent<RectTransform>().transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                //-- Set Button Position
+                CloneCobjBtnOpcoes.transform.GetComponent<RectTransform>().SetParent(pobjContent.gameObject.GetComponent<RectTransform>().transform);
+                CloneCobjBtnOpcoes.GetComponent<RectTransform>().transform.localPosition = new Vector3(0.0f, 0.0f, 356.6f);
+                CloneCobjBtnOpcoes.GetComponent<RectTransform>().transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-            //-- Set Button info
-            lscpClickActionButton.plActionType = pariActionType;
-            lscpClickActionButton.plActionCode = pariCodigoBotao;
-            lscpClickActionButton.pscpEnemyInfo = pscpEnemyInfo;
+                //-- Set Button info
+                lscpClickActionButton.plActionType = pariActionType;
+                lscpClickActionButton.plActionCode = pariCodigoBotao;
+                lscpClickActionButton.pscpEnemyInfo = pscpEnemyInfo;
+            }
         }
     }
 }

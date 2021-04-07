@@ -26,6 +26,10 @@ public class scpSetRichText : MonoBehaviour
                 return metBodyPart(pariLanguageCode);
             case 6:
                 return metBodyPartInjure(pariLanguageCode);
+            case 7:
+                return metConditions(pariLanguageCode);
+            case 8:
+                return metMoviment(pariLanguageCode);
         }
 
         return "ERRO";
@@ -188,6 +192,38 @@ public class scpSetRichText : MonoBehaviour
                 return staticGameBusinessLogic.psColorSeriousInjury + metSetText("Ferimento grave", "Serious injury") + "</color>";
             case 6:
                 return staticGameBusinessLogic.psColorVerySeriousInjury + metSetText("Ferimento muito grave", "Very serious injury") + "</color>";
+            default:
+                return "ERROR";
+        }
+    }
+
+    //-- Group 7
+    private string metConditions(int pariLanguageCode)
+    {
+        switch (pariLanguageCode)
+        {
+            case 1:
+                return metSetText("Distância: ", "Distance: ");
+            case 2:
+                return staticGameBusinessLogic.psGreenColorGood + metSetText("Não está vendo você", "Don't see you") + "</color>";
+            case 3:
+                return metSetText("Está vendo você", "Is seeing you");
+            default:
+                return "ERROR";
+        }
+    }
+
+    //-- Group 8
+    private string metMoviment(int pariLanguageCode)
+    {
+        switch (pariLanguageCode)
+        {
+            case 1:
+                return metSetText("Você se aproxima silenciosamente", "You approach silently");
+            case 2:
+                return metSetText("Você se aproxima devagar", "You approach slowly");
+            case 3:
+                return metSetText("Você se aproxima rapidamente", "You approach quickly");
             default:
                 return "ERROR";
         }

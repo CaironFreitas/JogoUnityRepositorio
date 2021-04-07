@@ -19,24 +19,41 @@ public class scpPlayerActions : MonoBehaviour
 
     public void metPlayerAction(long pariActionType, long pariActionCode)
     {
-        if (pariActionType == 1)
+        switch (pariActionType)
         {
-            switch (pariActionCode)
-            {
-                case 0: //-- Player try to hit
-                    metMeleeCombat();
-                    break;
-                case 1: //-- Player try to flee
-                    metFlee();
-                    break;
-                case 2: //-- Player try to hide
-                    metHide();
-                    break;
-            }
+            case 1:
+                switch (pariActionCode)
+                {
+                    case 0: //-- Player try to hit
+                        metMeleeCombat();
+                        break;
+                    case 1: //-- Player try to flee
+                        metFlee();
+                        break;
+                    case 2: //-- Player try to hide
+                        metHide();
+                        break;
+                }
+                break;
+
+            case 2:
+                switch (pariActionCode)
+                {
+                    case 0: //-- Player try to sneak
+                        metMoveFoward(2, pariActionCode);
+                        break;
+                    case 1: //-- Player try to walk
+                        metMoveFoward(4, pariActionCode);
+                        break;
+                    case 2: //-- Player try to run
+                        metMoveFoward(8, pariActionCode);
+                        break;
+                }
+                break;
         }
     }
 
-    public void metMeleeCombat()
+    private void metMeleeCombat()
     {
         //-- Player info for log fill
         string lsTextStart = cscpSetRichText.metFindText(2, 3);
@@ -60,7 +77,7 @@ public class scpPlayerActions : MonoBehaviour
         }
     }
 
-    public void metFlee()
+    private void metFlee()
     {
         long llDefaultFleeChance = 50;
         long llSkillDiff = 5;
@@ -81,7 +98,7 @@ public class scpPlayerActions : MonoBehaviour
         }
     }
 
-    public void metHide()
+    private void metHide()
     {
         long llDefaultHideChance = 10;
         long llSkillDiff = 5;
@@ -99,6 +116,31 @@ public class scpPlayerActions : MonoBehaviour
         else
         {
             pscpEscreveAcoes.metDefaultText("You", "Foi visto tentando se esconder");
+        }
+    }
+
+    private void metMoveFoward(long parlDistance, long parlActionCode)
+    {
+        if (staticWindowEvent.plDistance - parlDistance < 1)
+        {
+            staticWindowEvent.plDistance = 1;
+        }
+        else
+        {
+            staticWindowEvent.plDistance -= parlDistance;
+        }
+
+        switch (parlActionCode)
+        {
+            case 0:
+                pscpEscreveAcoes.metDefaultText(cscpSetRichText.metFindText(8, 1));
+                break;
+            case 1:
+                pscpEscreveAcoes.metDefaultText(cscpSetRichText.metFindText(8, 2));
+                break;
+            case 2:
+                pscpEscreveAcoes.metDefaultText(cscpSetRichText.metFindText(8, 3));
+                break;
         }
     }
 }

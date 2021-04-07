@@ -5,7 +5,6 @@ using UnityEngine;
 public class scpCreateEventWindow : MonoBehaviour
 {
     public GameObject pobjEventWindow;
-
     public scpEnemyInfo pscpEnemyInfo;
 
     private GameObject cobjMainCanvas;
@@ -23,10 +22,7 @@ public class scpCreateEventWindow : MonoBehaviour
             if (GameObject.FindGameObjectsWithTag("WindowEvent").GetUpperBound(0) < 0)
             {
                 GameObject CloneCgoJanela = Instantiate(pobjEventWindow, cobjMainCanvas.transform);
-
-                scpActionButtonManager lscpCriaBotoesAcao = CloneCgoJanela.GetComponent<scpActionButtonManager>();
-
-                lscpCriaBotoesAcao.pscpEnemyInfo = pscpEnemyInfo;
+                staticWindowEvent.pscpEnemyInfo = pscpEnemyInfo;
             }
         }
     }
